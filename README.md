@@ -1,4 +1,4 @@
-# Turnos PRogramas Preventivos
+# Turnos Programas Preventivos
 
 Asignación de turnos seleccionando data picker con horario,
 Login de afiliado a la Obra Social para permitirle acceder al programa o progrmas correspondiente
