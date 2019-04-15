@@ -1,0 +1,28 @@
+(function( $ ){
+    $.fn.extend({
+        Segment: function ( ) {
+			$(this).each(function (){
+				var self = $(this);
+				var wrapper = $("<div>",{class: "ui-segment"});
+				$(this).find("option").each(function (){
+					var option = $("<span>",{class: 'option',text: $(this).text(),value: $(this).val()});
+					if ($(this).is(":selected")){
+						option.addClass("active");
+					}
+					wrapper.append(option);
+				});
+				wrapper.find("span.option").click(function (){
+					if ($(this).attr('value')=='gine') { window.location.href = "turnosgine.php";
+					}
+					if ($(this).attr('value')=='cardio') { window.location.href = "turnoscardio.php";
+					}
+					wrapper.find("span.option").removeClass("active");
+					$(this).addClass("active");
+					self.val($(this).attr('value'));
+				});
+				$(this).after(wrapper);
+				$(this).hide();
+			});
+        }
+    });
+})(jQuery);
